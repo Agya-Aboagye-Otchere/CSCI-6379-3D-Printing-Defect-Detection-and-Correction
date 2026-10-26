@@ -1,0 +1,15 @@
+{
+  "zip_file": "3D Printing Defect Classification.v1i.folder.zip",
+  "images_extracted": 6132,
+  "images_per_class": {
+    "layer_shifting": 899,
+    "stringing": 1333,
+    "under_extrusion": 1544,
+    "warping": 1514,
+    "bed_adhesion": 341,
+    "over_extrusion": 501
+  },
+  "unique_source_photos": 5840,
+  "source_photos_dropped_conflicting_labels": 1,
+  "source_photos_in_multiple_roboflow_splits": 103
+}

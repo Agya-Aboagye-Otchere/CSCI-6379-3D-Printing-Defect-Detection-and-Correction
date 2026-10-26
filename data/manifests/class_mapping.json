@@ -1,0 +1,26 @@
+{
+  "class_to_id": {
+    "stringing": 0,
+    "warping": 1,
+    "layer_shifting": 2,
+    "under_extrusion": 3,
+    "over_extrusion": 4,
+    "bed_adhesion": 5
+  },
+  "id_to_class": {
+    "0": "stringing",
+    "1": "warping",
+    "2": "layer_shifting",
+    "3": "under_extrusion",
+    "4": "over_extrusion",
+    "5": "bed_adhesion"
+  },
+  "display_names": {
+    "stringing": "Stringing / Oozing",
+    "warping": "Warping / Corner Lifting",
+    "layer_shifting": "Layer Shifting / Step Misalignment",
+    "under_extrusion": "Under-Extrusion",
+    "over_extrusion": "Over-Extrusion",
+    "bed_adhesion": "Bed Adhesion Failure"
+  }
+}

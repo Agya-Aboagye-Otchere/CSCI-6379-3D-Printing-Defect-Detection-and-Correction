@@ -1,0 +1,157 @@
+{
+  "_instructions": "Agya (manufacturing) fills this in. For each defect give the primary corrective action, up to two secondary actions, a typical range (delta) and at least one citation. Use parameter names from parameter_vocabulary (add a new name only if none fits, and tell Hena). Direction: INCREASE, DECREASE, ENABLE or CHECK. Do NOT look at src/independent_reference.py or docs/INDEPENDENT_REFERENCE_TABLE.md - RQ3 needs the two to be independent.",
+  "author": "",
+  "date_completed": "",
+  "confidence_threshold": 0.65,
+  "parameter_vocabulary": [
+    "bed_leveling",
+    "bed_temperature",
+    "belt_tension",
+    "brim_or_raft",
+    "cooling_fan_speed",
+    "enclosure_or_draft_shield",
+    "filament_drying",
+    "first_layer_extrusion_width_and_speed",
+    "flow_rate_extrusion_multiplier",
+    "infill_density",
+    "layer_height",
+    "nozzle_temperature",
+    "print_speed",
+    "print_speed_first_layer",
+    "retraction_distance",
+    "retraction_speed",
+    "stepper_motor_current_or_jerk",
+    "travel_and_print_speed",
+    "travel_speed",
+    "z_hop_retraction",
+    "z_offset_nozzle_gap"
+  ],
+  "rules": {
+    "stringing": {
+      "primary_action": {
+        "parameter": "",
+        "direction": "",
+        "delta": ""
+      },
+      "secondary_actions": [
+        {
+          "parameter": "",
+          "direction": "",
+          "delta": ""
+        },
+        {
+          "parameter": "",
+          "direction": "",
+          "delta": ""
+        }
+      ],
+      "physical_rationale": "",
+      "citations": []
+    },
+    "warping": {
+      "primary_action": {
+        "parameter": "",
+        "direction": "",
+        "delta": ""
+      },
+      "secondary_actions": [
+        {
+          "parameter": "",
+          "direction": "",
+          "delta": ""
+        },
+        {
+          "parameter": "",
+          "direction": "",
+          "delta": ""
+        }
+      ],
+      "physical_rationale": "",
+      "citations": []
+    },
+    "layer_shifting": {
+      "primary_action": {
+        "parameter": "",
+        "direction": "",
+        "delta": ""
+      },
+      "secondary_actions": [
+        {
+          "parameter": "",
+          "direction": "",
+          "delta": ""
+        },
+        {
+          "parameter": "",
+          "direction": "",
+          "delta": ""
+        }
+      ],
+      "physical_rationale": "",
+      "citations": []
+    },
+    "under_extrusion": {
+      "primary_action": {
+        "parameter": "",
+        "direction": "",
+        "delta": ""
+      },
+      "secondary_actions": [
+        {
+          "parameter": "",
+          "direction": "",
+          "delta": ""
+        },
+        {
+          "parameter": "",
+          "direction": "",
+          "delta": ""
+        }
+      ],
+      "physical_rationale": "",
+      "citations": []
+    },
+    "over_extrusion": {
+      "primary_action": {
+        "parameter": "",
+        "direction": "",
+        "delta": ""
+      },
+      "secondary_actions": [
+        {
+          "parameter": "",
+          "direction": "",
+          "delta": ""
+        },
+        {
+          "parameter": "",
+          "direction": "",
+          "delta": ""
+        }
+      ],
+      "physical_rationale": "",
+      "citations": []
+    },
+    "bed_adhesion": {
+      "primary_action": {
+        "parameter": "",
+        "direction": "",
+        "delta": ""
+      },
+      "secondary_actions": [
+        {
+          "parameter": "",
+          "direction": "",
+          "delta": ""
+        },
+        {
+          "parameter": "",
+          "direction": "",
+          "delta": ""
+        }
+      ],
+      "physical_rationale": "",
+      "citations": []
+    }
+  }
+}

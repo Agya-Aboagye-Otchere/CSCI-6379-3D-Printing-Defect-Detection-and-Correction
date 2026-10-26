@@ -1,0 +1,27 @@
+# Environment and caches
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Large inputs: the Roboflow zip (848 MB) and the images extracted from it.
+# Get the zip from https://universe.roboflow.com/project-jkfnh/3d-printing-defect-classification
+# (folder format, v1) into dataset/ and run `python3 run_hena_pipeline.py` to rebuild data/raw and data/processed.
+dataset/
+data/raw/
+data/processed/
+
+# Model weights (ResNet-50 is ~95 MB per file) and training logs
+checkpoints/
+runs/*/checkpoints/
+logs/
+
+# Local-only folders
+to_send/
+archive/
+papers/
+
+# RQ3 independence: Agya writes the rule table without seeing the reference recommendations.
+# These two files are added to the repository only after data/rules/rule_table.json is submitted.
+src/independent_reference.py
+docs/INDEPENDENT_REFERENCE_TABLE.md

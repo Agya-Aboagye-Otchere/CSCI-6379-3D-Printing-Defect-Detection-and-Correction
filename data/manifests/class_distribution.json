@@ -1,0 +1,48 @@
+{
+  "splits": {
+    "train": {
+      "stringing": 708,
+      "warping": 754,
+      "layer_shifting": 75,
+      "under_extrusion": 995,
+      "over_extrusion": 252,
+      "bed_adhesion": 146
+    },
+    "val": {
+      "stringing": 152,
+      "warping": 162,
+      "layer_shifting": 18,
+      "under_extrusion": 213,
+      "over_extrusion": 54,
+      "bed_adhesion": 32
+    },
+    "test": {
+      "stringing": 151,
+      "warping": 162,
+      "layer_shifting": 15,
+      "under_extrusion": 213,
+      "over_extrusion": 54,
+      "bed_adhesion": 31
+    },
+    "total_train": 2930,
+    "total_val": 631,
+    "total_test": 626
+  },
+  "class_weights_inverse_frequency": {
+    "stringing": 0.6897,
+    "warping": 0.6477,
+    "layer_shifting": 6.5111,
+    "under_extrusion": 0.4908,
+    "over_extrusion": 1.9378,
+    "bed_adhesion": 3.3447
+  },
+  "random_seed": 42,
+  "split_ratios": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "max_images_per_scene": 30,
+  "near_duplicate_frames_dropped": 1945,
+  "scene_grouping": "data/scene_groups.csv"
+}

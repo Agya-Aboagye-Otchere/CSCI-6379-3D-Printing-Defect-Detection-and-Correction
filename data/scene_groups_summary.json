@@ -1,0 +1,53 @@
+{
+  "similarity_threshold": 0.75,
+  "classes": {
+    "stringing": {
+      "images": 1333,
+      "scenes": 323,
+      "largest_scene": 352,
+      "largest_scene_share": 0.264
+    },
+    "warping": {
+      "images": 1514,
+      "scenes": 173,
+      "largest_scene": 445,
+      "largest_scene_share": 0.294
+    },
+    "layer_shifting": {
+      "images": 899,
+      "scenes": 24,
+      "largest_scene": 433,
+      "largest_scene_share": 0.482
+    },
+    "under_extrusion": {
+      "images": 1544,
+      "scenes": 343,
+      "largest_scene": 127,
+      "largest_scene_share": 0.082
+    },
+    "over_extrusion": {
+      "images": 501,
+      "scenes": 195,
+      "largest_scene": 171,
+      "largest_scene_share": 0.341
+    },
+    "bed_adhesion": {
+      "images": 341,
+      "scenes": 88,
+      "largest_scene": 88,
+      "largest_scene_share": 0.258
+    }
+  },
+  "residual_similarity_after_split": {
+    "val": {
+      "median_max_cosine_to_train": 0.595,
+      "share_at_or_above_0.75": 0.016,
+      "share_at_or_above_0.9": 0.013
+    },
+    "test": {
+      "median_max_cosine_to_train": 0.592,
+      "share_at_or_above_0.75": 0.003,
+      "share_at_or_above_0.9": 0.003
+    }
+  }
+}
