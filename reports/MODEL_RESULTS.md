@@ -65,10 +65,17 @@ one image at a time (batch size 1) after 10 warm-up images, measured on the MPS 
 
 ### 7.4 Variation across seeds and configurations
 
-*Pending:* run the extra seeds and `python3 -m src.seed_summary`.
+Each configuration was trained with seeds 1, 2, 42. The final configuration (**baseline**) was chosen by mean validation macro-F1 (baseline: 53.3%, regularized: 47.4%); the test split was not used for the choice. Values are mean ± standard deviation over seeds, in percent. Sections 7.1-7.3 show the seed-42 run of the final configuration.
+
+| Config | Model | Seeds | Val macro-F1 | Test accuracy | Test macro-F1 |
+|---|---|---|---|---|---|
+| baseline (final) | MobileNetV2 | 1, 2, 42 | 52.4 ± 1.8 | 69.3 ± 2.4 | 64.3 ± 2.3 |
+| baseline (final) | ResNet-50 | 1, 2, 42 | 54.1 ± 0.7 | 69.7 ± 1.8 | 62.7 ± 0.9 |
+| regularized | MobileNetV2 | 1, 2, 42 | 46.1 ± 0.6 | 56.5 ± 1.8 | 50.9 ± 1.8 |
+| regularized | ResNet-50 | 1, 2, 42 | 48.7 ± 1.6 | 59.8 ± 1.7 | 53.7 ± 1.3 |
 
 ### 7.5 Answers
 
 **RQ1.** MobileNetV2 reaches 70.8% test accuracy and 66.5% macro-F1 on the 626 held-out test images; ResNet-50 reaches 67.9% test accuracy and 62.3% macro-F1 on the 626 held-out test images.
 
-**RQ2.** MobileNetV2 has the higher test macro-F1 (66.5% vs. 62.3%, a difference of 4.1 points). On the CPU, MobileNetV2 is 2.0x faster per image (10.5 vs. 21.2 ms) with 11x fewer parameters. Both models were trained and tested on the same split with the same settings, from a single seed, so small differences should not be over-interpreted.
+**RQ2.** Over 3 seeds, MobileNetV2 has the higher mean test macro-F1 (MobileNetV2 64.3 ± 2.3%, ResNet-50 62.7 ± 0.9%). The gap of 1.6 points is within about two standard deviations of the seed-to-seed spread, so the two models should be treated as comparable in accuracy. MobileNetV2 is 1.5x faster per image on the CPU (13.7 vs. 20.6 ms) with 11x fewer parameters.

@@ -1,0 +1,290 @@
+{
+  "configs": {
+    "baseline": {
+      "mobilenet": {
+        "seeds": [
+          1,
+          2,
+          42
+        ],
+        "best_val_macro_f1": {
+          "mean": 0.5245,
+          "std": 0.0184,
+          "n": 3
+        },
+        "test_accuracy": {
+          "mean": 0.6933,
+          "std": 0.0236,
+          "n": 3
+        },
+        "test_macro_precision": {
+          "mean": 0.6391,
+          "std": 0.0193,
+          "n": 3
+        },
+        "test_macro_recall": {
+          "mean": 0.6814,
+          "std": 0.0168,
+          "n": 3
+        },
+        "test_macro_f1": {
+          "mean": 0.6431,
+          "std": 0.0231,
+          "n": 3
+        },
+        "inference_ms_per_image_cpu": {
+          "mean": 13.6867,
+          "std": 2.8235,
+          "n": 3
+        },
+        "per_class_recall": {
+          "stringing": {
+            "mean": 0.7704,
+            "std": 0.0729,
+            "n": 3
+          },
+          "warping": {
+            "mean": 0.7449,
+            "std": 0.0156,
+            "n": 3
+          },
+          "layer_shifting": {
+            "mean": 0.5111,
+            "std": 0.0385,
+            "n": 3
+          },
+          "under_extrusion": {
+            "mean": 0.6041,
+            "std": 0.0305,
+            "n": 3
+          },
+          "over_extrusion": {
+            "mean": 0.6728,
+            "std": 0.0214,
+            "n": 3
+          },
+          "bed_adhesion": {
+            "mean": 0.785,
+            "std": 0.0373,
+            "n": 3
+          }
+        }
+      },
+      "resnet": {
+        "seeds": [
+          1,
+          2,
+          42
+        ],
+        "best_val_macro_f1": {
+          "mean": 0.5415,
+          "std": 0.0073,
+          "n": 3
+        },
+        "test_accuracy": {
+          "mean": 0.697,
+          "std": 0.0184,
+          "n": 3
+        },
+        "test_macro_precision": {
+          "mean": 0.6124,
+          "std": 0.017,
+          "n": 3
+        },
+        "test_macro_recall": {
+          "mean": 0.673,
+          "std": 0.0176,
+          "n": 3
+        },
+        "test_macro_f1": {
+          "mean": 0.6274,
+          "std": 0.0093,
+          "n": 3
+        },
+        "inference_ms_per_image_cpu": {
+          "mean": 20.58,
+          "std": 0.7562,
+          "n": 3
+        },
+        "per_class_recall": {
+          "stringing": {
+            "mean": 0.8124,
+            "std": 0.0213,
+            "n": 3
+          },
+          "warping": {
+            "mean": 0.7449,
+            "std": 0.0525,
+            "n": 3
+          },
+          "layer_shifting": {
+            "mean": 0.4667,
+            "std": 0.1334,
+            "n": 3
+          },
+          "under_extrusion": {
+            "mean": 0.5947,
+            "std": 0.0583,
+            "n": 3
+          },
+          "over_extrusion": {
+            "mean": 0.6666,
+            "std": 0.049,
+            "n": 3
+          },
+          "bed_adhesion": {
+            "mean": 0.7527,
+            "std": 0.0812,
+            "n": 3
+          }
+        }
+      }
+    },
+    "regularized": {
+      "mobilenet": {
+        "seeds": [
+          1,
+          2,
+          42
+        ],
+        "best_val_macro_f1": {
+          "mean": 0.4611,
+          "std": 0.0064,
+          "n": 3
+        },
+        "test_accuracy": {
+          "mean": 0.5655,
+          "std": 0.0176,
+          "n": 3
+        },
+        "test_macro_precision": {
+          "mean": 0.5422,
+          "std": 0.0164,
+          "n": 3
+        },
+        "test_macro_recall": {
+          "mean": 0.608,
+          "std": 0.0192,
+          "n": 3
+        },
+        "test_macro_f1": {
+          "mean": 0.5087,
+          "std": 0.0176,
+          "n": 3
+        },
+        "inference_ms_per_image_cpu": {
+          "mean": 10.0967,
+          "std": 0.3402,
+          "n": 3
+        },
+        "per_class_recall": {
+          "stringing": {
+            "mean": 0.7329,
+            "std": 0.0601,
+            "n": 3
+          },
+          "warping": {
+            "mean": 0.502,
+            "std": 0.0503,
+            "n": 3
+          },
+          "layer_shifting": {
+            "mean": 0.4667,
+            "std": 0.0667,
+            "n": 3
+          },
+          "under_extrusion": {
+            "mean": 0.4366,
+            "std": 0.0205,
+            "n": 3
+          },
+          "over_extrusion": {
+            "mean": 0.6605,
+            "std": 0.0214,
+            "n": 3
+          },
+          "bed_adhesion": {
+            "mean": 0.8495,
+            "std": 0.0186,
+            "n": 3
+          }
+        }
+      },
+      "resnet": {
+        "seeds": [
+          1,
+          2,
+          42
+        ],
+        "best_val_macro_f1": {
+          "mean": 0.4869,
+          "std": 0.0162,
+          "n": 3
+        },
+        "test_accuracy": {
+          "mean": 0.598,
+          "std": 0.0169,
+          "n": 3
+        },
+        "test_macro_precision": {
+          "mean": 0.5819,
+          "std": 0.0083,
+          "n": 3
+        },
+        "test_macro_recall": {
+          "mean": 0.651,
+          "std": 0.021,
+          "n": 3
+        },
+        "test_macro_f1": {
+          "mean": 0.5366,
+          "std": 0.0134,
+          "n": 3
+        },
+        "inference_ms_per_image_cpu": {
+          "mean": 22.46,
+          "std": 1.497,
+          "n": 3
+        },
+        "per_class_recall": {
+          "stringing": {
+            "mean": 0.7483,
+            "std": 0.0289,
+            "n": 3
+          },
+          "warping": {
+            "mean": 0.537,
+            "std": 0.0107,
+            "n": 3
+          },
+          "layer_shifting": {
+            "mean": 0.5778,
+            "std": 0.0385,
+            "n": 3
+          },
+          "under_extrusion": {
+            "mean": 0.4726,
+            "std": 0.0178,
+            "n": 3
+          },
+          "over_extrusion": {
+            "mean": 0.7099,
+            "std": 0.0214,
+            "n": 3
+          },
+          "bed_adhesion": {
+            "mean": 0.8602,
+            "std": 0.0186,
+            "n": 3
+          }
+        }
+      }
+    }
+  },
+  "selection_rule": "highest mean best_val_macro_f1 over both models and all seeds",
+  "mean_val_macro_f1_by_config": {
+    "baseline": 0.533,
+    "regularized": 0.474
+  },
+  "final_config": "baseline"
+}

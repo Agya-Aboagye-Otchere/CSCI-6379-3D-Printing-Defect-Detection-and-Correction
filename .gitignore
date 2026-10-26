@@ -25,3 +25,7 @@ papers/
 # These two files are added to the repository only after data/rules/rule_table.json is submitted.
 src/independent_reference.py
 docs/INDEPENDENT_REFERENCE_TABLE.md
+
+# Loose copies in the project root: reference papers, the proposal PDF and an unzipped copy of the dataset
+/*.pdf
+/3D Printing Defect Classification.v1i.folder/

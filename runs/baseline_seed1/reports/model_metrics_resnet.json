@@ -1,0 +1,232 @@
+{
+  "model": "resnet",
+  "architecture": "ResNet-50 (ImageNet)",
+  "parameters": 23520326,
+  "best_epoch": 6,
+  "best_val_macro_f1": 0.5416,
+  "epochs_run": 12,
+  "train_minutes": 5.8,
+  "test_images": 626,
+  "test_accuracy": 0.6965,
+  "test_macro_precision": 0.6039,
+  "test_macro_recall": 0.6602,
+  "test_macro_f1": 0.621,
+  "per_class": {
+    "stringing": {
+      "precision": 0.8503,
+      "recall": 0.8278,
+      "f1": 0.8389,
+      "support": 151
+    },
+    "warping": {
+      "precision": 0.7633,
+      "recall": 0.7963,
+      "f1": 0.7795,
+      "support": 162
+    },
+    "layer_shifting": {
+      "precision": 0.3684,
+      "recall": 0.4667,
+      "f1": 0.4118,
+      "support": 15
+    },
+    "under_extrusion": {
+      "precision": 0.7595,
+      "recall": 0.5634,
+      "f1": 0.6469,
+      "support": 213
+    },
+    "over_extrusion": {
+      "precision": 0.3696,
+      "recall": 0.6296,
+      "f1": 0.4658,
+      "support": 54
+    },
+    "bed_adhesion": {
+      "precision": 0.5122,
+      "recall": 0.6774,
+      "f1": 0.5833,
+      "support": 31
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "stringing",
+      "warping",
+      "layer_shifting",
+      "under_extrusion",
+      "over_extrusion",
+      "bed_adhesion"
+    ],
+    "matrix": [
+      [
+        125,
+        4,
+        0,
+        6,
+        10,
+        6
+      ],
+      [
+        2,
+        129,
+        1,
+        11,
+        16,
+        3
+      ],
+      [
+        0,
+        0,
+        7,
+        7,
+        1,
+        0
+      ],
+      [
+        14,
+        31,
+        8,
+        120,
+        29,
+        11
+      ],
+      [
+        4,
+        1,
+        3,
+        12,
+        34,
+        0
+      ],
+      [
+        2,
+        4,
+        0,
+        2,
+        2,
+        21
+      ]
+    ]
+  },
+  "inference_ms_per_image": {
+    "mps": 7.73,
+    "cpu": 20.76
+  },
+  "device": "mps",
+  "torch_version": "2.5.1",
+  "config": {
+    "batch_size": 32,
+    "optimizer": "AdamW",
+    "weight_decay": 0.0001,
+    "stage1_head_epochs": 5,
+    "stage1_lr": 0.001,
+    "stage2_max_epochs": 30,
+    "stage2_lr": 0.0001,
+    "lr_scheduler": "ReduceLROnPlateau(factor=0.1, patience=2) on validation macro-F1",
+    "early_stopping_patience": 6,
+    "label_smoothing": 0.0,
+    "random_resized_crop_scale": null,
+    "loss": "cross-entropy with inverse-frequency class weights",
+    "name": "baseline",
+    "seed": 1
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "stage": "head",
+      "train_loss": 1.347,
+      "val_loss": 1.4647,
+      "val_accuracy": 0.5563,
+      "val_macro_f1": 0.4494
+    },
+    {
+      "epoch": 2,
+      "stage": "head",
+      "train_loss": 0.8984,
+      "val_loss": 1.4333,
+      "val_accuracy": 0.5848,
+      "val_macro_f1": 0.4785
+    },
+    {
+      "epoch": 3,
+      "stage": "head",
+      "train_loss": 0.7004,
+      "val_loss": 1.5027,
+      "val_accuracy": 0.5784,
+      "val_macro_f1": 0.4838
+    },
+    {
+      "epoch": 4,
+      "stage": "head",
+      "train_loss": 0.5982,
+      "val_loss": 1.4709,
+      "val_accuracy": 0.5784,
+      "val_macro_f1": 0.4848
+    },
+    {
+      "epoch": 5,
+      "stage": "head",
+      "train_loss": 0.5333,
+      "val_loss": 1.5454,
+      "val_accuracy": 0.5895,
+      "val_macro_f1": 0.4877
+    },
+    {
+      "epoch": 6,
+      "stage": "finetune",
+      "train_loss": 0.3081,
+      "val_loss": 1.8175,
+      "val_accuracy": 0.6292,
+      "val_macro_f1": 0.5416
+    },
+    {
+      "epoch": 7,
+      "stage": "finetune",
+      "train_loss": 0.0976,
+      "val_loss": 2.1912,
+      "val_accuracy": 0.6307,
+      "val_macro_f1": 0.5126
+    },
+    {
+      "epoch": 8,
+      "stage": "finetune",
+      "train_loss": 0.0534,
+      "val_loss": 2.4233,
+      "val_accuracy": 0.6355,
+      "val_macro_f1": 0.502
+    },
+    {
+      "epoch": 9,
+      "stage": "finetune",
+      "train_loss": 0.0364,
+      "val_loss": 2.6416,
+      "val_accuracy": 0.6561,
+      "val_macro_f1": 0.5119
+    },
+    {
+      "epoch": 10,
+      "stage": "finetune",
+      "train_loss": 0.0205,
+      "val_loss": 2.6414,
+      "val_accuracy": 0.6434,
+      "val_macro_f1": 0.5091
+    },
+    {
+      "epoch": 11,
+      "stage": "finetune",
+      "train_loss": 0.0192,
+      "val_loss": 2.6491,
+      "val_accuracy": 0.6418,
+      "val_macro_f1": 0.5069
+    },
+    {
+      "epoch": 12,
+      "stage": "finetune",
+      "train_loss": 0.0201,
+      "val_loss": 2.6628,
+      "val_accuracy": 0.6513,
+      "val_macro_f1": 0.5088
+    }
+  ]
+}
