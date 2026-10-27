@@ -6,10 +6,10 @@ __pycache__/
 
 # Large inputs: the Roboflow zip (848 MB) and the images extracted from it.
 # Get the zip from https://universe.roboflow.com/project-jkfnh/3d-printing-defect-classification
-# (folder format, v1) into dataset/ and run `python3 run_hena_pipeline.py` to rebuild data/raw and data/processed.
+# (folder format, v1) into dataset/ and run `python3 run_hena_pipeline.py` to rebuild data/raw.
 dataset/
 data/raw/
-data/processed/
+# data/processed/ is in the repository (170 MB) so the team can use the split images directly.
 
 # Model weights (ResNet-50 is ~95 MB per file) and training logs
 checkpoints/

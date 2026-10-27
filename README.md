@@ -30,18 +30,17 @@
 
 ## After cloning
 
-The repository holds the code, split manifests, rules, reports and figures, but not the images or model weights (too large for GitHub).
+The repository holds the code, the split images (`data/processed/train`, `val`, `test`; 4,187 images), split manifests, rules, reports and figures. The Roboflow zip and model weights are not included (too large for GitHub).
 
 - **To look at results or write report sections:** nothing to install; read `reports/` and `figures/`.
-- **To fill in the class audit or rule table (Agya):** edit `data/rules/class_audit.csv` and `data/rules/rule_table.json`, then commit them or send them to Hena. The audit images are in the `Agya_files.zip` Hena shares.
-- **To run the code:** download the Roboflow export (folder format, v1) from https://universe.roboflow.com/project-jkfnh/3d-printing-defect-classification into `dataset/`, then:
+- **To fill in the class audit or rule table (Agya):** edit `data/rules/class_audit.csv` and `data/rules/rule_table.json`, then commit and push them. The `image_path` column of the audit sheet points to the images in `data/processed/train/`.
+- **To train or evaluate the models:** the split images are already in `data/processed/`, so only the environment is needed:
   ```bash
   python3.11 -m venv .venv
   .venv/bin/pip install torch==2.5.1 torchvision==0.20.1 scikit-learn==1.5.2 matplotlib==3.9.2 pillow==11.0.0 numpy==1.26.4
-  .venv/bin/python -m src.ingest_roboflow
-  .venv/bin/python -m src.scene_groups
-  python3 run_hena_pipeline.py
+  .venv/bin/python -m src.train --model all
   ```
+- **To rebuild the split from scratch:** download the Roboflow export (folder format, v1) from https://universe.roboflow.com/project-jkfnh/3d-printing-defect-classification into `dataset/`, then run `.venv/bin/python -m src.ingest_roboflow`, `.venv/bin/python -m src.scene_groups` and `python3 run_hena_pipeline.py`.
 
 `src/independent_reference.py` and `docs/INDEPENDENT_REFERENCE_TABLE.md` are kept out of the repository until Agya submits the rule table, so the RQ3 comparison stays independent. Until then only Hena can run the RQ3 step.
 
