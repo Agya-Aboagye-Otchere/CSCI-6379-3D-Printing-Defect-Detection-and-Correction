@@ -6,7 +6,7 @@
 |---|---|---|
 | **Hena** (CS) | Data pipeline, model training, simulation, RQ3 agreement evaluation; report: Data, Experimental Setup, RQ3 results | RQ1/RQ2 training, RQ3 evaluation |
 | **Harrish** (CS) | Review of the model training and results; report: Methods, RQ1/RQ2 results (starting from `reports/MODEL_RESULTS.md`) | RQ1, RQ2 write-up |
-| **Agya** (Manufacturing) | Class audit, defect definitions, correction rule table; report: Background, Related Work, rule discussion | RQ3 rules |
+| **Agya** (CS) | Class audit, defect definitions, correction rule table; report: Background, Related Work, rule discussion | RQ3 rules |
 
 ## Folders
 
