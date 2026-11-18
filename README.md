@@ -32,8 +32,8 @@
 
 The repository holds the code, the split images (`data/processed/train`, `val`, `test`; 4,187 images), split manifests, rules, reports and figures. The Roboflow zip and model weights are not included (too large for GitHub).
 
-- **To look at results or write report sections:** nothing to install; read `reports/` and `figures/`.
-- **To fill in the class audit or rule table (Agya):** edit `data/rules/class_audit.csv` and `data/rules/rule_table.json`, then commit and push them. The `image_path` column of the audit sheet points to the images in `data/processed/train/`.
+- **To read the report:** `reports/FINAL_REPORT.md` (Word version: `reports/FINAL_REPORT.docx`); figures are in `figures/`.
+- **To review the class audit or rule table:** edit `data/rules/class_audit.csv` or `data/rules/rule_table.json`, commit and push, then re-run `python3 run_hena_pipeline.py`. The `image_path` column of the audit sheet points to the images in `data/processed/train/`.
 - **To train or evaluate the models:** the split images are already in `data/processed/`, so only the environment is needed:
   ```bash
   python3.11 -m venv .venv
@@ -42,12 +42,14 @@ The repository holds the code, the split images (`data/processed/train`, `val`, 
   ```
 - **To rebuild the split from scratch:** download the Roboflow export (folder format, v1) from https://universe.roboflow.com/project-jkfnh/3d-printing-defect-classification into `dataset/`, then run `.venv/bin/python -m src.ingest_roboflow`, `.venv/bin/python -m src.scene_groups` and `python3 run_hena_pipeline.py`.
 
-`src/independent_reference.py` and `docs/INDEPENDENT_REFERENCE_TABLE.md` are kept out of the repository until Agya submits the rule table, so the RQ3 comparison stays independent. Until then only Hena can run the RQ3 step.
+The RQ3 reference recommendations are in `src/independent_reference.py` and `docs/INDEPENDENT_REFERENCE_TABLE.md`. They were kept out of the repository until the rule table was finished (Nov 18).
 
-## What each person needs
+## Status (Nov 18)
 
-- **Harrish:** review `src/train.py`, `reports/model_metrics_*.json` and `figures/confusion_matrix_*.png` / `training_curves_*.png`, then write Methods and RQ1/RQ2 Results from the draft in `reports/MODEL_RESULTS.md`.
-- **Agya:** fill in `data/rules/class_audit.csv` (only the `issue` and `suggested_class` columns for wrongly labelled images; use a class name or `drop`) and `data/rules/rule_table.json`. Do not open `docs/INDEPENDENT_REFERENCE_TABLE.md` or `src/independent_reference.py` until the rule table is submitted, so the RQ3 comparison stays independent.
+All steps have been run: data, both models (12 training runs), the rule table and the RQ3 evaluation. All report sections are drafted in `reports/FINAL_REPORT.md`; each owner reviews their sections.
+
+- **Harrish:** review Methods and RQ1/RQ2 results (Sections 6–7) against `src/train.py`, `reports/model_metrics_*.json` and the figures.
+- **Agya:** review Background, Related Work and the rule table (Sections 2, 3, 8; `data/rules/rule_table.json`). The rule table was drafted by Hena, so a manufacturing review matters for RQ3 (see Section 5.2 of the report).
 
 ## Models (RQ1, RQ2)
 

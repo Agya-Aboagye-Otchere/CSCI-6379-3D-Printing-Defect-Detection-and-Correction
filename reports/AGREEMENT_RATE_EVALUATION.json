@@ -1,4 +1,280 @@
 {
-  "status": "PENDING_RULE_TABLE",
-  "message": "Fill in data/rules/rule_table.json (Agya) and re-run."
+  "status": "OK",
+  "scenario_evaluation": {
+    "n_scenarios": 18,
+    "n_distinct_defects": 6,
+    "primary_agreement_rate_pct": 66.67,
+    "primary_parameter_agreement_rate_pct": 66.67,
+    "any_action_overlap_rate_pct": 100.0,
+    "cohens_kappa_primary": 0.625,
+    "note": "The rule engine maps by defect class only, so the 18 scenarios reduce to 6 distinct comparisons; severity does not change the outcome.",
+    "scenario_logs": [
+      {
+        "scenario_id": "SCEN-STR-01",
+        "defect_class": "stringing",
+        "severity": "Mild",
+        "rule_primary": "retraction_distance/INCREASE",
+        "reference_primary": "retraction_distance/INCREASE",
+        "primary_parameter_match": true,
+        "primary_full_match": true,
+        "any_action_overlap": true
+      },
+      {
+        "scenario_id": "SCEN-STR-02",
+        "defect_class": "stringing",
+        "severity": "Moderate",
+        "rule_primary": "retraction_distance/INCREASE",
+        "reference_primary": "retraction_distance/INCREASE",
+        "primary_parameter_match": true,
+        "primary_full_match": true,
+        "any_action_overlap": true
+      },
+      {
+        "scenario_id": "SCEN-STR-03",
+        "defect_class": "stringing",
+        "severity": "Severe",
+        "rule_primary": "retraction_distance/INCREASE",
+        "reference_primary": "retraction_distance/INCREASE",
+        "primary_parameter_match": true,
+        "primary_full_match": true,
+        "any_action_overlap": true
+      },
+      {
+        "scenario_id": "SCEN-WARP-01",
+        "defect_class": "warping",
+        "severity": "Mild",
+        "rule_primary": "bed_temperature/INCREASE",
+        "reference_primary": "bed_temperature/INCREASE",
+        "primary_parameter_match": true,
+        "primary_full_match": true,
+        "any_action_overlap": true
+      },
+      {
+        "scenario_id": "SCEN-WARP-02",
+        "defect_class": "warping",
+        "severity": "Moderate",
+        "rule_primary": "bed_temperature/INCREASE",
+        "reference_primary": "bed_temperature/INCREASE",
+        "primary_parameter_match": true,
+        "primary_full_match": true,
+        "any_action_overlap": true
+      },
+      {
+        "scenario_id": "SCEN-WARP-03",
+        "defect_class": "warping",
+        "severity": "Severe",
+        "rule_primary": "bed_temperature/INCREASE",
+        "reference_primary": "bed_temperature/INCREASE",
+        "primary_parameter_match": true,
+        "primary_full_match": true,
+        "any_action_overlap": true
+      },
+      {
+        "scenario_id": "SCEN-LS-01",
+        "defect_class": "layer_shifting",
+        "severity": "Mild",
+        "rule_primary": "belt_tension/CHECK",
+        "reference_primary": "travel_and_print_speed/DECREASE",
+        "primary_parameter_match": false,
+        "primary_full_match": false,
+        "any_action_overlap": true
+      },
+      {
+        "scenario_id": "SCEN-LS-02",
+        "defect_class": "layer_shifting",
+        "severity": "Moderate",
+        "rule_primary": "belt_tension/CHECK",
+        "reference_primary": "travel_and_print_speed/DECREASE",
+        "primary_parameter_match": false,
+        "primary_full_match": false,
+        "any_action_overlap": true
+      },
+      {
+        "scenario_id": "SCEN-LS-03",
+        "defect_class": "layer_shifting",
+        "severity": "Severe",
+        "rule_primary": "belt_tension/CHECK",
+        "reference_primary": "travel_and_print_speed/DECREASE",
+        "primary_parameter_match": false,
+        "primary_full_match": false,
+        "any_action_overlap": true
+      },
+      {
+        "scenario_id": "SCEN-UND-01",
+        "defect_class": "under_extrusion",
+        "severity": "Mild",
+        "rule_primary": "flow_rate_extrusion_multiplier/INCREASE",
+        "reference_primary": "flow_rate_extrusion_multiplier/INCREASE",
+        "primary_parameter_match": true,
+        "primary_full_match": true,
+        "any_action_overlap": true
+      },
+      {
+        "scenario_id": "SCEN-UND-02",
+        "defect_class": "under_extrusion",
+        "severity": "Moderate",
+        "rule_primary": "flow_rate_extrusion_multiplier/INCREASE",
+        "reference_primary": "flow_rate_extrusion_multiplier/INCREASE",
+        "primary_parameter_match": true,
+        "primary_full_match": true,
+        "any_action_overlap": true
+      },
+      {
+        "scenario_id": "SCEN-UND-03",
+        "defect_class": "under_extrusion",
+        "severity": "Severe",
+        "rule_primary": "flow_rate_extrusion_multiplier/INCREASE",
+        "reference_primary": "flow_rate_extrusion_multiplier/INCREASE",
+        "primary_parameter_match": true,
+        "primary_full_match": true,
+        "any_action_overlap": true
+      },
+      {
+        "scenario_id": "SCEN-OVR-01",
+        "defect_class": "over_extrusion",
+        "severity": "Mild",
+        "rule_primary": "flow_rate_extrusion_multiplier/DECREASE",
+        "reference_primary": "flow_rate_extrusion_multiplier/DECREASE",
+        "primary_parameter_match": true,
+        "primary_full_match": true,
+        "any_action_overlap": true
+      },
+      {
+        "scenario_id": "SCEN-OVR-02",
+        "defect_class": "over_extrusion",
+        "severity": "Moderate",
+        "rule_primary": "flow_rate_extrusion_multiplier/DECREASE",
+        "reference_primary": "flow_rate_extrusion_multiplier/DECREASE",
+        "primary_parameter_match": true,
+        "primary_full_match": true,
+        "any_action_overlap": true
+      },
+      {
+        "scenario_id": "SCEN-OVR-03",
+        "defect_class": "over_extrusion",
+        "severity": "Severe",
+        "rule_primary": "flow_rate_extrusion_multiplier/DECREASE",
+        "reference_primary": "flow_rate_extrusion_multiplier/DECREASE",
+        "primary_parameter_match": true,
+        "primary_full_match": true,
+        "any_action_overlap": true
+      },
+      {
+        "scenario_id": "SCEN-BED-01",
+        "defect_class": "bed_adhesion",
+        "severity": "Mild",
+        "rule_primary": "bed_leveling/CHECK",
+        "reference_primary": "z_offset_nozzle_gap/DECREASE",
+        "primary_parameter_match": false,
+        "primary_full_match": false,
+        "any_action_overlap": true
+      },
+      {
+        "scenario_id": "SCEN-BED-02",
+        "defect_class": "bed_adhesion",
+        "severity": "Moderate",
+        "rule_primary": "bed_leveling/CHECK",
+        "reference_primary": "z_offset_nozzle_gap/DECREASE",
+        "primary_parameter_match": false,
+        "primary_full_match": false,
+        "any_action_overlap": true
+      },
+      {
+        "scenario_id": "SCEN-BED-03",
+        "defect_class": "bed_adhesion",
+        "severity": "Severe",
+        "rule_primary": "bed_leveling/CHECK",
+        "reference_primary": "z_offset_nozzle_gap/DECREASE",
+        "primary_parameter_match": false,
+        "primary_full_match": false,
+        "any_action_overlap": true
+      }
+    ]
+  },
+  "end_to_end_simulation": {
+    "mobilenet": {
+      "predictions_file": "reports/predictions_mobilenet.csv",
+      "n_test_images": 626,
+      "end_to_end_agreement_rate_pct": 58.47,
+      "agreement_when_recommending_pct": 69.45,
+      "abstention_rate_pct": 15.81,
+      "outcomes": {
+        "correct_primary_action": 366,
+        "wrong_primary_action": 161,
+        "abstained": 99
+      },
+      "per_class_outcomes": {
+        "stringing": {
+          "correct_primary_action": 109,
+          "wrong_primary_action": 23,
+          "abstained": 19
+        },
+        "warping": {
+          "correct_primary_action": 117,
+          "abstained": 13,
+          "wrong_primary_action": 32
+        },
+        "layer_shifting": {
+          "wrong_primary_action": 14,
+          "abstained": 1
+        },
+        "under_extrusion": {
+          "correct_primary_action": 106,
+          "abstained": 56,
+          "wrong_primary_action": 51
+        },
+        "over_extrusion": {
+          "wrong_primary_action": 13,
+          "correct_primary_action": 34,
+          "abstained": 7
+        },
+        "bed_adhesion": {
+          "wrong_primary_action": 28,
+          "abstained": 3
+        }
+      }
+    },
+    "resnet": {
+      "predictions_file": "reports/predictions_resnet.csv",
+      "n_test_images": 626,
+      "end_to_end_agreement_rate_pct": 48.4,
+      "agreement_when_recommending_pct": 74.08,
+      "abstention_rate_pct": 34.66,
+      "outcomes": {
+        "correct_primary_action": 303,
+        "wrong_primary_action": 106,
+        "abstained": 217
+      },
+      "per_class_outcomes": {
+        "stringing": {
+          "correct_primary_action": 112,
+          "wrong_primary_action": 9,
+          "abstained": 30
+        },
+        "warping": {
+          "correct_primary_action": 94,
+          "abstained": 52,
+          "wrong_primary_action": 16
+        },
+        "layer_shifting": {
+          "abstained": 5,
+          "wrong_primary_action": 10
+        },
+        "under_extrusion": {
+          "correct_primary_action": 70,
+          "abstained": 106,
+          "wrong_primary_action": 37
+        },
+        "over_extrusion": {
+          "abstained": 19,
+          "wrong_primary_action": 8,
+          "correct_primary_action": 27
+        },
+        "bed_adhesion": {
+          "wrong_primary_action": 26,
+          "abstained": 5
+        }
+      }
+    }
+  }
 }

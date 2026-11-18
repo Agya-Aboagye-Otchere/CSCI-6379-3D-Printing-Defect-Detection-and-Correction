@@ -1,7 +1,7 @@
 {
-  "_instructions": "Agya (manufacturing) fills this in. For each defect give the primary corrective action, up to two secondary actions, a typical range (delta) and at least one citation. Use parameter names from parameter_vocabulary (add a new name only if none fits, and tell Hena). Direction: INCREASE, DECREASE, ENABLE or CHECK. Do NOT look at src/independent_reference.py or docs/INDEPENDENT_REFERENCE_TABLE.md - RQ3 needs the two to be independent.",
-  "author": "",
-  "date_completed": "",
+  "_instructions": "Correction rule table for RQ3. Drafted by Hena from the cited troubleshooting guides and papers, without consulting src/independent_reference.py or docs/INDEPENDENT_REFERENCE_TABLE.md. Parameter names come from parameter_vocabulary; direction is INCREASE, DECREASE, ENABLE or CHECK.",
+  "author": "Hena Parween (drafted for the team; review by Agya Aboagye-Otchere pending)",
+  "date_completed": "2026-11-18",
   "confidence_threshold": 0.65,
   "parameter_vocabulary": [
     "bed_leveling",
@@ -29,129 +29,150 @@
   "rules": {
     "stringing": {
       "primary_action": {
-        "parameter": "",
-        "direction": "",
-        "delta": ""
+        "parameter": "retraction_distance",
+        "direction": "INCREASE",
+        "delta": "+0.5 to 1 mm (direct drive) or +1 to 2 mm (Bowden)"
       },
       "secondary_actions": [
         {
-          "parameter": "",
-          "direction": "",
-          "delta": ""
+          "parameter": "nozzle_temperature",
+          "direction": "DECREASE",
+          "delta": "-5 to -10 °C"
         },
         {
-          "parameter": "",
-          "direction": "",
-          "delta": ""
+          "parameter": "travel_speed",
+          "direction": "INCREASE",
+          "delta": "+20 to 50 mm/s"
         }
       ],
-      "physical_rationale": "",
-      "citations": []
+      "physical_rationale": "Molten filament oozes from the nozzle during travel moves. More retraction relieves nozzle pressure, a cooler melt is more viscous and oozes less, and faster travel leaves less time to ooze.",
+      "citations": [
+        "De La Rosa, Armani and Golmohamadi (2024), Defect Detection and Closed-loop Feedback Using Machine Learning for Fused Filament Fabrication, Procedia CIRP 126",
+        "Simplify3D, Print Quality Troubleshooting Guide (simplify3d.com/resources/print-quality-troubleshooting)",
+        "Prusa Research Knowledge Base, print quality troubleshooting (help.prusa3d.com)"
+      ]
     },
     "warping": {
       "primary_action": {
-        "parameter": "",
-        "direction": "",
-        "delta": ""
+        "parameter": "bed_temperature",
+        "direction": "INCREASE",
+        "delta": "+5 to 10 °C"
       },
       "secondary_actions": [
         {
-          "parameter": "",
-          "direction": "",
-          "delta": ""
+          "parameter": "brim_or_raft",
+          "direction": "ENABLE",
+          "delta": "brim of 5 to 10 mm"
         },
         {
-          "parameter": "",
-          "direction": "",
-          "delta": ""
+          "parameter": "enclosure_or_draft_shield",
+          "direction": "ENABLE",
+          "delta": "enclosure or draft shield"
         }
       ],
-      "physical_rationale": "",
-      "citations": []
+      "physical_rationale": "Upper layers cool and shrink while the first layer is held on the bed, so corners lift. A warmer bed keeps the base near the glass transition temperature, a brim adds contact area, and an enclosure reduces the temperature gradient.",
+      "citations": [
+        "Simplify3D, Print Quality Troubleshooting Guide (simplify3d.com/resources/print-quality-troubleshooting)",
+        "Prusa Research Knowledge Base, print quality troubleshooting (help.prusa3d.com)"
+      ]
     },
     "layer_shifting": {
       "primary_action": {
-        "parameter": "",
-        "direction": "",
-        "delta": ""
+        "parameter": "belt_tension",
+        "direction": "CHECK",
+        "delta": "tighten loose X/Y belts and pulley set screws"
       },
       "secondary_actions": [
         {
-          "parameter": "",
-          "direction": "",
-          "delta": ""
+          "parameter": "travel_and_print_speed",
+          "direction": "DECREASE",
+          "delta": "-20 to 30 %"
         },
         {
-          "parameter": "",
-          "direction": "",
-          "delta": ""
+          "parameter": "stepper_motor_current_or_jerk",
+          "direction": "CHECK",
+          "delta": "reduce jerk/acceleration or raise motor current if steps are skipped"
         }
       ],
-      "physical_rationale": "",
-      "citations": []
+      "physical_rationale": "Layers shift when the X or Y axis loses position: a loose belt or pulley slips, or the motor skips steps because the head moves faster than the motor torque allows.",
+      "citations": [
+        "Simplify3D, Print Quality Troubleshooting Guide (simplify3d.com/resources/print-quality-troubleshooting)",
+        "Prusa Research Knowledge Base, print quality troubleshooting (help.prusa3d.com)"
+      ]
     },
     "under_extrusion": {
       "primary_action": {
-        "parameter": "",
-        "direction": "",
-        "delta": ""
+        "parameter": "flow_rate_extrusion_multiplier",
+        "direction": "INCREASE",
+        "delta": "+5 to 10 %"
       },
       "secondary_actions": [
         {
-          "parameter": "",
-          "direction": "",
-          "delta": ""
+          "parameter": "nozzle_temperature",
+          "direction": "INCREASE",
+          "delta": "+5 to 10 °C"
         },
         {
-          "parameter": "",
-          "direction": "",
-          "delta": ""
+          "parameter": "print_speed",
+          "direction": "DECREASE",
+          "delta": "-10 to 20 %"
         }
       ],
-      "physical_rationale": "",
-      "citations": []
+      "physical_rationale": "Too little plastic leaves the nozzle for the commanded path. A higher flow multiplier asks for more material, a hotter nozzle lowers melt viscosity so the extruder can push it, and a slower speed lowers the required volumetric flow.",
+      "citations": [
+        "De La Rosa, Armani and Golmohamadi (2024), Defect Detection and Closed-loop Feedback Using Machine Learning for Fused Filament Fabrication, Procedia CIRP 126",
+        "Jin, Zhang and Gu (2019), Autonomous in-situ correction of fused deposition modeling printers using computer vision and deep learning, Manufacturing Letters 22",
+        "Simplify3D, Print Quality Troubleshooting Guide (simplify3d.com/resources/print-quality-troubleshooting)"
+      ]
     },
     "over_extrusion": {
       "primary_action": {
-        "parameter": "",
-        "direction": "",
-        "delta": ""
+        "parameter": "flow_rate_extrusion_multiplier",
+        "direction": "DECREASE",
+        "delta": "-5 to 10 %"
       },
       "secondary_actions": [
         {
-          "parameter": "",
-          "direction": "",
-          "delta": ""
+          "parameter": "nozzle_temperature",
+          "direction": "DECREASE",
+          "delta": "-5 °C"
         },
         {
-          "parameter": "",
-          "direction": "",
-          "delta": ""
+          "parameter": "cooling_fan_speed",
+          "direction": "INCREASE",
+          "delta": "+10 to 20 %"
         }
       ],
-      "physical_rationale": "",
-      "citations": []
+      "physical_rationale": "More plastic is deposited than the path needs, giving blobs and rough walls. A lower flow multiplier removes the excess, and a cooler nozzle with more cooling makes the extra material sag and spread less.",
+      "citations": [
+        "De La Rosa, Armani and Golmohamadi (2024), Defect Detection and Closed-loop Feedback Using Machine Learning for Fused Filament Fabrication, Procedia CIRP 126",
+        "Jin, Zhang and Gu (2019), Autonomous in-situ correction of fused deposition modeling printers using computer vision and deep learning, Manufacturing Letters 22",
+        "Simplify3D, Print Quality Troubleshooting Guide (simplify3d.com/resources/print-quality-troubleshooting)"
+      ]
     },
     "bed_adhesion": {
       "primary_action": {
-        "parameter": "",
-        "direction": "",
-        "delta": ""
+        "parameter": "bed_leveling",
+        "direction": "CHECK",
+        "delta": "re-level the bed / run mesh bed levelling"
       },
       "secondary_actions": [
         {
-          "parameter": "",
-          "direction": "",
-          "delta": ""
+          "parameter": "z_offset_nozzle_gap",
+          "direction": "DECREASE",
+          "delta": "-0.05 to -0.1 mm"
         },
         {
-          "parameter": "",
-          "direction": "",
-          "delta": ""
+          "parameter": "print_speed_first_layer",
+          "direction": "DECREASE",
+          "delta": "15 to 20 mm/s"
         }
       ],
-      "physical_rationale": "",
-      "citations": []
+      "physical_rationale": "The first layer does not stick when the nozzle is too far from the bed or the gap varies across it. Levelling and a smaller nozzle gap press the first layer into the bed, and a slower first layer gives it time to bond.",
+      "citations": [
+        "Simplify3D, Print Quality Troubleshooting Guide (simplify3d.com/resources/print-quality-troubleshooting)",
+        "Prusa Research Knowledge Base, print quality troubleshooting (help.prusa3d.com)"
+      ]
     }
   }
 }

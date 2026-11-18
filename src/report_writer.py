@@ -107,8 +107,9 @@ def write_data_report(output_path: str = "reports/DATA_AND_EXPERIMENTAL_SETUP.md
         audit_text = (f"Agya (manufacturing) reviewed {SAMPLES_PER_CLASS} random training images per class. "
                       f"{n_drop} image(s) were removed and {len(corrections) - n_drop} relabelled before the final split.")
     else:
-        audit_text = (f"*Pending:* Agya (manufacturing) is reviewing {SAMPLES_PER_CLASS} random training images per class "
-                      "(`data/rules/class_audit.csv`); corrections are applied automatically on the next pipeline run.")
+        audit_text = (f"No manual label audit was completed: a sheet of {SAMPLES_PER_CLASS} random training images per class "
+                      "(`data/rules/class_audit.csv`) was prepared, but no corrections were returned, so the Roboflow labels "
+                      "are used as published. Corrections added to the sheet are applied on the next pipeline run.")
 
     md = f"""# Data and Experimental Setup
 
@@ -173,9 +174,12 @@ MobileNet and ResNet are fine-tuned on the split above with identical settings (
 early stopping, augmentation, class weights). Training details and results are in the Methods and Results sections.
 
 ### 5.2 Correction framework evaluation (RQ3)
-**Independence.** The rule table (`data/rules/rule_table.json`) is written by Agya (manufacturing). The reference
-recommendations (`docs/INDEPENDENT_REFERENCE_TABLE.md`) were compiled separately by Hena from a different set of
-sources (Prusa, Simplify3D, All3DP, Gibson et al.), and Agya does not see them before submitting the rule table.
+**Independence.** The reference recommendations (`docs/INDEPENDENT_REFERENCE_TABLE.md`) were compiled first, from
+Prusa, Simplify3D, All3DP and Gibson et al. The rule table (`data/rules/rule_table.json`) was planned to be written by
+the manufacturing teammate without seeing the reference; in the end it was drafted later, by the same team member who
+compiled the reference, from De La Rosa et al. (2024), Jin et al. (2019), Simplify3D and Prusa, without consulting the
+reference while drafting. The two tables therefore share an author and some sources, and the agreement measures how
+consistent two literature-based tables are rather than agreement between independent experts.
 
 **Scenario evaluation.** {len(PREDEFINED_SCENARIOS)} predefined scenarios (`docs/PREDEFINED_SCENARIOS.md`) cover the six defects at three
 severity levels on PLA, PETG and ABS. Each is passed to the rule engine as a correct, confident classification, and its

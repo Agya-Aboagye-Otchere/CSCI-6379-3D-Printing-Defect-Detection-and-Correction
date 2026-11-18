@@ -28,7 +28,7 @@ Following the proposal, we keep six defect classes and exclude all other categor
 - Roboflow renames files to `<original>_jpg.rf.<hash>.jpg`. Grouping by the original name shows that the
   6132 extracted images come from 5840 distinct source photos.
 - 1 source photo(s) carried two different defect labels and were removed.
-- *Pending:* Agya (manufacturing) is reviewing 50 random training images per class (`data/rules/class_audit.csv`); corrections are applied automatically on the next pipeline run.
+- No manual label audit was completed: a sheet of 50 random training images per class (`data/rules/class_audit.csv`) was prepared, but no corrections were returned, so the Roboflow labels are used as published. Corrections added to the sheet are applied on the next pipeline run.
 
 ### 4.4 Near-duplicate scenes
 Many images are frames of the same video or re-uploads of one photo with rotation, noise or colour changes, under
@@ -108,9 +108,12 @@ MobileNet and ResNet are fine-tuned on the split above with identical settings (
 early stopping, augmentation, class weights). Training details and results are in the Methods and Results sections.
 
 ### 5.2 Correction framework evaluation (RQ3)
-**Independence.** The rule table (`data/rules/rule_table.json`) is written by Agya (manufacturing). The reference
-recommendations (`docs/INDEPENDENT_REFERENCE_TABLE.md`) were compiled separately by Hena from a different set of
-sources (Prusa, Simplify3D, All3DP, Gibson et al.), and Agya does not see them before submitting the rule table.
+**Independence.** The reference recommendations (`docs/INDEPENDENT_REFERENCE_TABLE.md`) were compiled first, from
+Prusa, Simplify3D, All3DP and Gibson et al. The rule table (`data/rules/rule_table.json`) was planned to be written by
+the manufacturing teammate without seeing the reference; in the end it was drafted later, by the same team member who
+compiled the reference, from De La Rosa et al. (2024), Jin et al. (2019), Simplify3D and Prusa, without consulting the
+reference while drafting. The two tables therefore share an author and some sources, and the agreement measures how
+consistent two literature-based tables are rather than agreement between independent experts.
 
 **Scenario evaluation.** 18 predefined scenarios (`docs/PREDEFINED_SCENARIOS.md`) cover the six defects at three
 severity levels on PLA, PETG and ABS. Each is passed to the rule engine as a correct, confident classification, and its
@@ -124,4 +127,22 @@ class, so classification errors count as wrong recommendations. We report, per m
 test images that received the reference action), agreement when the system recommends, and the abstention rate.
 
 ### 5.3 RQ3 results
-*Pending.* The rule table (`data/rules/rule_table.json`, Agya) has not been filled in yet. Re-run `python3 run_hena_pipeline.py` once it is.
+**Scenario evaluation** (rule table vs. reference, assuming a correct and confident classification):
+
+| Metric | Value |
+|---|---|
+| Primary action agreement (parameter and direction) | 66.67% |
+| Primary parameter agreement | 66.67% |
+| Any-action overlap | 100.0% |
+| Cohen's kappa (primary action) | 0.625 |
+
+The rule engine maps by defect class only, so the 18 scenarios reduce to 6 distinct comparisons; severity does not change the outcome.
+
+**End-to-end simulation** (test split, model prediction -> rule -> compared with the reference for the image's true class):
+
+| Model | Test images | End-to-end agreement | Agreement when recommending | Abstained |
+|---|---|---|---|---|
+| mobilenet | 626 | 58.47% | 69.45% | 15.81% |
+| resnet | 626 | 48.4% | 74.08% | 34.66% |
+
+See `figures/rq3_end_to_end_outcomes.png` and `figures/rq3_per_class_agreement.png`.
